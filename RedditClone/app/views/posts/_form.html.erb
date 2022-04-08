@@ -1,0 +1,25 @@
+<form action="<%= action %>" method="post">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="<%= method %>">
+    <label>Title:
+        <input type="text" name="post[title]" value="<%= post.title %>">
+    </label>
+    <label>URL:
+        <input type="text" name="post[url]" value="<%= post.url %>">
+    </label>
+    <label>Content:
+        <textarea style="display:block" name="post[content]" cols="30" rows="10"><%= post.content %></textarea>
+    </label>
+    <label>Subs:
+        <div class="subs">
+            <% Sub.all.each do |sub| %>
+            <label> <%= sub.title %>
+                <input <%= subs.include?(sub.id) ? "checked class='selected-sub'" : nil %>
+                    type="checkbox" name="post[subs][]" value="<%= sub.id %>">
+            </label>
+            <% end %>
+        </div>
+    </label>
+    <button><%= button_text %></button>
+</form>
+

@@ -1,0 +1,9 @@
+
+<ul>
+    <li>Username: <%= user.username %></li>
+    <li>Session Token: <%= user.session_token %></li>
+    <li>Password Digest: <%= user.password_digest %></li>
+    <% if action == 'index' %>
+    <a href="<%= user_url(user) %>">Show more info</a>
+    <% end %>
+</ul>

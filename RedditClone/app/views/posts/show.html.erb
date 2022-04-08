@@ -1,0 +1,6 @@
+<a href="<%= @post.url %>"><h2><%= @post.title %></h2></a></li>
+<a href="<%= user_url(@post.author_id) %>"><%= @post.author.username %></a>
+<p><%= @post.content %></p>
+<% if logged_in? && current_user.id == @post.author_id %>
+    <a href="<%= edit_post_url(@post)%>">Edit Post</a>
+<% end %>

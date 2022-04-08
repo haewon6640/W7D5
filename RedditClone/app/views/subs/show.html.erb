@@ -1,0 +1,15 @@
+<h1><%= @sub.title %></h1>
+<p><%= @sub.description %></p>
+<% if logged_in?  && current_user.id == @sub.creator_id %>
+    <a href="<%=edit_sub_url(@sub)%>">Edit Sub</a>
+<% end %>
+<%= all_subs %>
+<a href="<%=new_sub_post_url(@sub.id)%>">Create a new post.</a>
+<br>
+<% @sub.posts.each do |post| %>
+    <ul>
+        <li><a href="<%= post.url %>"><h2><%= post.title %></h2></a></li>
+        <li><a href="<%= user_url(post.author_id) %>"><%= post.author.username %></a></li>
+        <li><a href="<%= sub_post_url(post.sub_id, post) %>">Read More</a></li>
+    </ul>
+<% end %>
