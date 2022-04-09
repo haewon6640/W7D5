@@ -32,4 +32,8 @@ class Post < ApplicationRecord
             end
         end
     end
+
+    def sub_ids=(sub_ids)
+        
+    end
 end

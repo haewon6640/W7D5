@@ -37,17 +37,8 @@ class PostsController < ApplicationController
     @subs = params[:post][:subs].map(&:to_i)
     if @post && @post.author_id == current_user.id
       if @post.update(post_params)
-        @post.post_subs.each do |ps|
-          unless @subs.include?(ps.id)
-            ps.destroy
-          end
-        end
-        current_subs = @post.post_subs.map(&:sub_id)
-        @subs.each do |sub_id|
-          unless current_subs.include?(sub_id)
-            PostSub.create(post_id: @post.id, sub_id: sub_id)
-          end
-        end
+        @
+        
         redirect_to post_url(@post)
       else
         flash.now[:errors] = @post.errors.full_messages
