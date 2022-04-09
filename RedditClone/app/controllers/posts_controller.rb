@@ -17,8 +17,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.sub_id = params[:sub_id]
-    @subs = []
+    # debugger
+    @subs = [params[:sub_id].to_i]
     render :new
   end
 

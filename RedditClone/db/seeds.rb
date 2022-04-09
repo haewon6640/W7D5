@@ -20,5 +20,5 @@ s3 = Sub.create(title: 'Jerry3', description: 'guy', creator_id: User.first.id)
 
 p1 = Post.create(title: 'be happy', url: 'google.com', content: 'search for happiness', author_id: User.first.id)
 
-ps1 = PostSub.create(post_id: p1.id, sub_id: s1.id)
-ps2 = PostSub.create(post_id: p1.id, sub_id: s3.id)
+ps1 = PostSub.create(post_id: 1, sub_id: 1)
+ps2 = PostSub.create(post_id: 1, sub_id: 3)

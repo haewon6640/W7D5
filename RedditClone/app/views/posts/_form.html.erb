@@ -13,10 +13,10 @@
     <label>Subs:
         <div class="subs">
             <% Sub.all.each do |sub| %>
-            <label> <%= sub.title %>
-                <input <%= subs.include?(sub.id) ? "checked class='selected-sub'" : nil %>
-                    type="checkbox" name="post[subs][]" value="<%= sub.id %>">
-            </label>
+                <label> <%= sub.title %>
+                    <input <%= subs.include?(sub.id) ? "checked class='selected-sub'" : nil %>
+                        type="checkbox" name="post[subs][]" value="<%= sub.id %>">
+                </label>
             <% end %>
         </div>
     </label>

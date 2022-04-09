@@ -4,3 +4,4 @@
 <% if logged_in? && current_user.id == @post.author_id %>
     <a href="<%= edit_post_url(@post)%>">Edit Post</a>
 <% end %>
+<%= link_to 'Back', :back %>
